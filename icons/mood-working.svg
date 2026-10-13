@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36 42 239 239" role="img">
+  <title>Advisor</title>
+  <!--
+    Set class on the root svg. Moods color the visor (the face), not a
+    corner badge. Light visors (yellow / amber / green / orange) use
+    black eyes so the face still reads.
+      (none) / quiet   sleepy, black visor
+      working          awake, blue visor
+      attention        awake, yellow visor
+    Pad states: waiting, done, error, question, tool_running, tool_stalled
+    Optional corner badge: class="dot" plus the status-dot CSS variable.
+  -->
+  <g fill="#fff">
+    <rect x="77" y="120" width="157" height="157" rx="52"/>
+    <circle cx="83" cy="203" r="25"/>
+    <circle cx="228" cy="203" r="25"/>
+  </g>
+  <rect id="visor" x="86" y="147" width="138" height="111" rx="40" fill="#0000FF"/>
+
+  <g class="eyes-awake" fill="#ffffff" display="inline">
+    <circle cx="125.9" cy="201.6" r="12.6"/>
+    <circle cx="185.1" cy="201.5" r="12.6"/>
+  </g>
+  <g class="eyes-sleepy" fill="#ffffff" display="none" fill-rule="evenodd">
+    <path d="M 112.3 205.5 A 13.6 8.4 0 0 0 139.5 205.5 Z
+             M 119.6 205.5 A 6.3 3.8 0 0 0 132.2 205.5 Z"/>
+    <path d="M 171.5 205.4 A 13.6 8.4 0 0 0 198.7 205.4 Z
+             M 178.8 205.4 A 6.3 3.8 0 0 0 191.4 205.4 Z"/>
+  </g>
+
+  <g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round">
+    <line x1="155.5" y1="50" x2="155.5" y2="82"/>
+    <line x1="91.7" y1="68.4" x2="114" y2="94"/>
+    <line x1="197" y1="94" x2="219.3" y2="68.4"/>
+  </g>
+
+  <g id="status-badge" display="none">
+    <circle cx="233" cy="257" r="24" fill="#fff"/>
+    <circle cx="233" cy="257" r="21" fill="#141414"/>
+    <circle id="status-dot" cx="233" cy="257" r="16"/>
+  </g>
+</svg>

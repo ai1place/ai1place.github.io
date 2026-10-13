@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor — one key for every AI session</title>
+  <meta name="description" content="Advisor lights a key for every AI coding session and brings that window forward. Download the macOS app.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/icons/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="leds" aria-hidden="true">
+    <span style="background:#0000FF"></span>
+    <span style="background:#8000FF"></span>
+    <span style="background:#00FF00"></span>
+    <span style="background:#FF7F00"></span>
+    <span style="background:#FFAA00"></span>
+    <span style="background:#FF0000"></span>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <img src="/icons/app-icon.svg" width="36" height="36" alt="">
+        Advisor
+      </a>
+      <nav>
+        <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <img class="hero-icon" src="/icons/app-icon.svg" width="96" height="96" alt="">
+          <p class="eyebrow">Menu-bar app for macOS</p>
+          <h1>See every AI session on a key.</h1>
+          <p class="lede">Advisor listens to your coding agents and lights one key per session. The color is what that session is doing. Press the key and its window comes forward.</p>
+
+          <div class="download">
+            <a class="download-button" id="download" href="https://github.com/ai1place/ai1place.github.io/releases">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 1.5v8.2M4.6 7.2 8 10.6l3.4-3.4M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Download for Mac
+            </a>
+            <p class="download-meta" id="download-meta">Latest build on GitHub Releases.</p>
+            <p class="download-file" id="download-file"></p>
+            <p class="download-links">
+              <a id="checksum" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>SHA-256</a>
+              <a id="notes" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Release notes</a>
+              <a id="intel" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Intel Mac</a>
+              <a id="windows" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Windows</a>
+            </p>
+            <code class="digest" id="digest" hidden></code>
+            <p class="note">Signed with a Developer ID and notarized by Apple. The disk image opens after the usual download prompt.</p>
+            <p class="note sr-only" id="download-status" role="status">Loading the latest macOS release.</p>
+            <noscript>
+              <p class="note">JavaScript fills in the latest disk image from this site's GitHub Releases. The button above opens that page directly.</p>
+            </noscript>
+          </div>
+        </div>
+
+        <div class="pad" aria-hidden="true">
+          <div class="key">
+            <div class="cap" style="--led:#0000FF">
+              <img src="/icons/mood-working.svg" alt="">
+              <i class="led"></i>
+            </div>
+            <p>Thinking<span>The agent is working</span></p>
+          </div>
+          <div class="key">
+            <div class="cap" style="--led:#8000FF">
+              <img src="/icons/mood-tool.svg" alt="">
+              <i class="led"></i>
+            </div>
+            <p>Tool running<span>A tool call is in progress</span></p>
+          </div>
+          <div class="key">
+            <div class="cap" style="--led:#00FF00">
+              <img src="/icons/mood-done.svg" alt="">
+              <i class="led"></i>
+            </div>
+            <p>Complete<span>The agent finished</span></p>
+          </div>
+          <div class="key">
+            <div class="cap" style="--led:#FF7F00">
+              <img src="/icons/mood-question.svg" alt="">
+              <i class="led blinking"></i>
+            </div>
+            <p>Needs input<span>Blocked on you</span></p>
+          </div>
+          <div class="key">
+            <div class="cap" style="--led:#FFAA00">
+              <img src="/icons/mood-waiting.svg" alt="">
+              <i class="led"></i>
+            </div>
+            <p>Waiting<span>Idle, nothing blocking</span></p>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Same colors as the keyboard</h2>
+        <p class="section-lede">Each state has one color, in the menu bar and on the key. Needs input and a stalled tool blink, so they stay distinct from the solid color next to them.</p>
+        <ul class="states">
+          <li class="state">
+            <span class="face"><img src="/icons/mood-idle.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#828282"></i>Idle</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-working.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#0000FF"></i>Thinking</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-tool.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#8000FF"></i>Tool running</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-tool.svg" alt=""></span>
+            <span class="state-name"><i class="dot blinking" style="--led:#8000FF"></i>Tool stalled</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-done.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#00FF00"></i>Complete</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-question.svg" alt=""></span>
+            <span class="state-name"><i class="dot blinking" style="--led:#FF7F00"></i>Needs input</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-waiting.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#FFAA00"></i>Waiting</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/icons/mood-error.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#FF0000"></i>Error</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>In the app</h2>
+        <div class="facts">
+          <article>
+            <h3>Grouped by agent</h3>
+            <p>Sessions sit together by agent, each with its state, how long it has been in it, and a one-line summary of the prompt.</p>
+          </article>
+          <article>
+            <h3>Live activity</h3>
+            <p>While a tool runs, the session shows which tool and for how long.</p>
+          </article>
+          <article>
+            <h3>Click to focus</h3>
+            <p>Click a session to bring its window forward. Click its key number to move it to another key.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>On your Mac</h2>
+        <ol class="steps">
+          <li>Open the disk image and drag Advisor to Applications.</li>
+          <li>Open Advisor and allow the download prompt. Grant Accessibility and Automation when macOS asks. A key press needs them to raise the right window.</li>
+          <li>The Agents view lists each coding agent it finds. You review the hook change, and nothing is written until you apply it.</li>
+          <li>Connect the keyboard with a USB-C cable that carries data. Charge-only cables will not light the keys.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Agents that report in</h2>
+        <p class="section-lede">Advisor reads each agent's own hooks. A session can belong to Terminal, VS Code, or IntelliJ.</p>
+        <ul class="agents">
+          <li>Claude Code</li>
+          <li>Codex</li>
+          <li>Copilot CLI</li>
+          <li>Cursor</li>
+          <li>Grok Build</li>
+        </ul>
+        <p class="hardware">Any RGB QMK keyboard can run it. Keymaps are ready for the <a href="https://nuphy.com/products/air75-v2">NuPhy Air75 V2</a> and the <a href="https://www.keychron.com/products/keychron-k0-max-qmk-wireless-custom-number-pad">Keychron K0 Max</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Advisor for macOS. The download is a Release on this GitHub repository.</p>
+      <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/assets/site.js"></script>
+</body>
+</html>
