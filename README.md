@@ -1,6 +1,6 @@
 # Advisor
 
-Public download page for Advisor on macOS, served at [ai1place.github.io](https://ai1place.github.io/).
+Public download page for Advisor on macOS, served at [aione.page](https://aione.page/).
 
 The page reads [this repository's Releases](https://github.com/ai1place/ai1place.github.io/releases) and links the newest macOS disk image. No account is required to download it. A stable release is preferred. When every release is a pre-release, the newest pre-release is offered and marked Preview.
 
