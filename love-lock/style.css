@@ -234,7 +234,8 @@ h2 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* Six shots: three across on desktop, two across below 860px. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin: 0;
   padding: 0;
