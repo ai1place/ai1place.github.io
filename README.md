@@ -16,6 +16,18 @@ The button uses the asset's browser download URL (`https://github.com/ai1place/a
 
 `icons/robot.svg` is the app's robot, including the CSS classes that color its face. `icons/app-icon.svg` is the macOS icon tile. The `mood-*.svg` faces are that robot in the app's on-screen state colors.
 
+## Love Lock
+
+`love-lock/` holds the pages for the Love Lock iPhone app. It has its own `style.css` and `images/`, so it doesn't depend on the Advisor assets.
+
+| Page | URL | Used for |
+| --- | --- | --- |
+| `love-lock/index.html` | https://ai1.place/love-lock/ | Features and screenshots (App Store marketing URL) |
+| `love-lock/privacy.html` | https://ai1.place/love-lock/privacy.html | App Store Connect Privacy Policy URL |
+| `love-lock/support.html` | https://ai1.place/love-lock/support.html | App Store Connect Support URL |
+
+Support requests are issues on this repository, filed with the `.github/ISSUE_TEMPLATE/love-lock.yml` form, which applies the `love-lock` label. The screenshots show made-up sample locks. They come from `scripts/screenshots.sh` in the Love Lock repository.
+
 ## Copyright
 
 Copyright © 2026 Chris Earle. All rights reserved.

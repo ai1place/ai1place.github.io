@@ -1,0 +1,38 @@
+name: Love Lock
+description: A bug, question or idea for the Love Lock iPhone app.
+title: "[Love Lock] "
+labels: ["love-lock"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for writing in. Issues are public, so please leave out real names and dates. Made-up ones are fine.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this about?
+      options:
+        - Something isn't working
+        - A question
+        - An idea
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead? Screenshots help.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: iPhone and iOS version
+      description: Settings → General → About.
+      placeholder: iPhone 16 Pro, iOS 27.1
+  - type: input
+    id: version
+    attributes:
+      label: Love Lock version
+      description: Shown in the App Store under Version History.
+      placeholder: "1.0"
