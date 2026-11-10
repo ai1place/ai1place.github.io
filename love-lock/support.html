@@ -1,103 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Love Lock Support</title>
-  <meta name="description" content="Help with Love Lock's Lock Screen and Home Screen widgets, and how to report a problem.">
-  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/love-lock/images/mark.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/love-lock/images/apple-touch-icon.png">
-  <link rel="stylesheet" href="/love-lock/style.css">
-</head>
-<body>
-  <div class="ribbon" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Love Lock Support</title>
+    <meta
+      name="description"
+      content="Help with Love Lock's Lock Screen and Home Screen widgets, and how to report a problem."
+    />
+    <meta
+      name="theme-color"
+      content="#f2f2f7"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1c1c1e"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" href="/love-lock/images/mark.svg" type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      href="/love-lock/images/apple-touch-icon.png"
+    />
+    <link rel="stylesheet" href="/love-lock/style.css" />
+  </head>
+  <body>
+    <div class="ribbon" aria-hidden="true"></div>
 
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/love-lock/">
-        <img src="/love-lock/images/icon.png" width="36" height="36" alt="">
-        Love Lock
-      </a>
-      <nav aria-label="Love Lock">
-        <a href="/love-lock/">Features</a>
-        <a href="/love-lock/support.html" aria-current="page">Support</a>
-        <a href="/love-lock/privacy.html">Privacy</a>
-      </nav>
-    </header>
-
-    <main class="page">
-      <h1>Support</h1>
-      <p class="updated">Answers to common questions, and how to reach us.</p>
-
-      <h2>Questions</h2>
-      <div class="faq">
-        <details id="add-widget" open>
-          <summary>How do I put a countdown on my Lock Screen?</summary>
-          <ol>
-            <li>In Love Lock, tap <strong>+</strong>, pick a preset, fill in the date, and tap <strong>Save</strong>.</li>
-            <li>Lock your iPhone, then touch and hold the Lock Screen and tap <strong>Customize</strong>, then <strong>Lock Screen</strong>.</li>
-            <li>Tap the widget area below the clock (or the line above it, for an inline widget), choose <strong>Love Lock</strong>, and add the widget whose number matches your lock.</li>
-          </ol>
-        </details>
-
-        <details id="home-screen">
-          <summary>Can I put a countdown on my Home Screen?</summary>
-          <p>Yes. Touch and hold an empty spot on your Home Screen, tap <strong>Edit</strong>, then <strong>Add Widget</strong>. Choose <strong>Love Lock</strong>, swipe to the small or medium size, and add the widget whose number matches your lock. The small size also works in StandBy, when your iPhone is charging on its side.</p>
-        </details>
-
-        <details id="numbers">
-          <summary>Why are the widgets called Lock 1, Lock 2 and so on?</summary>
-          <p>iOS can't list widgets named after things you create in an app, so Love Lock offers eight numbered widgets. <strong>Lock 1</strong> shows the first lock in the app, <strong>Lock 2</strong> the second, and so on. Each lock in the app is labeled with its widget, such as "Widget: Lock 2". Reordering your locks in the app (tap <strong>Edit</strong>, then drag) changes which lock each widget shows.</p>
-        </details>
-
-        <details id="add-a-lock">
-          <summary>My widget says "Add a lock".</summary>
-          <p>That widget's number is higher than the number of locks you have. For example, a Lock 3 widget with only two locks in the app. Add another lock, or swap the widget for one with a lower number. Only the first eight locks have widgets.</p>
-        </details>
-
-        <details id="missing">
-          <summary>Love Lock doesn't appear in the widget list.</summary>
-          <p>Open the Love Lock app once after installing it, then try adding the widget again. If it's still missing, restart your iPhone. iOS sometimes needs a restart to refresh its list of widgets after an app is installed or updated.</p>
-        </details>
-
-        <details id="rotate">
-          <summary>How do Rotate and Next up work?</summary>
-          <p>When a lock has more than one countdown, <strong>Rotate</strong> shows them in turn, in the order you set, every 15 minutes, hour, 6 hours or day. <strong>Next up</strong> always shows whichever countdown is closest, which suits holidays or upcoming days off. The <strong>US Holidays</strong> preset group uses Next up.</p>
-        </details>
-
-        <details id="travel">
-          <summary>What happens when I travel to another time zone?</summary>
-          <p>By default, countdowns follow you: a date ends at midnight wherever you are. To count to an exact moment in one place, such as a birth time, open the countdown and turn on <strong>Pin to a time zone</strong>. Pinned countdowns don't move when you travel.</p>
-        </details>
-
-        <details id="today">
-          <summary>Why does my countdown still say "today"?</summary>
-          <p>Some days last longer than one day. Hanukkah and Passover show "today" for 8 days, and Rosh Hashanah for 2. Any countdown can set how many days it lasts under <strong>Lasts</strong>, so a week-long vacation shows "today" until it's over and then counts up. Jewish holidays count to their first full day; they begin at sundown the evening before.</p>
-        </details>
-
-        <details id="delete">
-          <summary>How do I delete a lock or a countdown?</summary>
-          <p>Swipe it to the left and tap <strong>Delete</strong>. A lock always keeps at least one countdown. Deleting a lock moves every lock after it up one widget number.</p>
-        </details>
-      </div>
-
-      <h2 id="contact">Contact</h2>
-      <p>Found a bug, or have a question or idea? Open an issue on GitHub (a free GitHub account is required). Issues are public, so please don't include your own names or dates.</p>
-      <p>
-        <a class="contact" href="https://github.com/ai1place/ai1place.github.io/issues/new?template=love-lock.yml">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
-          Open an issue on GitHub
+    <div class="wrap">
+      <header>
+        <a class="brand" href="/love-lock/">
+          <img src="/love-lock/images/icon.png" width="36" height="36" alt="" />
+          Love Lock
         </a>
-      </p>
-      <p class="note">Include your iPhone model and iOS version (Settings → General → About) and what you expected to happen.</p>
-    </main>
+        <nav aria-label="Love Lock">
+          <a href="/love-lock/">Features</a>
+          <a href="/love-lock/support.html" aria-current="page">Support</a>
+          <a href="/love-lock/privacy.html">Privacy</a>
+        </nav>
+      </header>
 
-    <footer>
-      <p><a href="/love-lock/">Love Lock</a> · <a href="/love-lock/privacy.html">Privacy policy</a></p>
-      <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
-    </footer>
-  </div>
-</body>
+      <main class="page">
+        <h1>Support</h1>
+        <p class="updated">Answers to common questions, and how to reach us.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details id="add-widget" open>
+            <summary>How do I put a countdown on my Lock Screen?</summary>
+            <ol>
+              <li>
+                In Love Lock, tap <strong>+</strong>, pick a preset, fill in the
+                date, and tap <strong>Save</strong>.
+              </li>
+              <li>
+                Lock your iPhone, then touch and hold the Lock Screen and tap
+                <strong>Customize</strong>, then <strong>Lock Screen</strong>.
+              </li>
+              <li>
+                Tap the widget area below the clock (or the line above it, for
+                an inline widget), choose <strong>Love Lock</strong>, and add
+                the widget whose number matches your lock.
+              </li>
+            </ol>
+          </details>
+
+          <details id="home-screen">
+            <summary>Can I put a countdown on my Home Screen?</summary>
+            <p>
+              Yes. Touch and hold an empty spot on your Home Screen, tap
+              <strong>Edit</strong>, then <strong>Add Widget</strong>. Choose
+              <strong>Love Lock</strong>, swipe to the small or medium size, and
+              add the widget whose number matches your lock. The small size also
+              works in StandBy, when your iPhone is charging on its side.
+            </p>
+          </details>
+
+          <details id="numbers">
+            <summary>
+              Why are the widgets called Lock 1, Lock 2, and so on?
+            </summary>
+            <p>
+              iOS can't list widgets named after things you create in an app, so
+              Love Lock offers eight numbered widgets.
+              <strong>Lock 1</strong> shows the first lock in the app,
+              <strong>Lock 2</strong> the second, and so on. Each lock in the
+              app is labeled with its widget, such as "Widget: Lock 2".
+              Reordering your locks in the app (tap <strong>Edit</strong>, then
+              drag) changes which lock each widget shows.
+            </p>
+          </details>
+
+          <details id="add-a-lock">
+            <summary>My widget says "Add a lock".</summary>
+            <p>
+              That widget's number is higher than the number of locks you have.
+              For example, a Lock 3 widget with only two locks in the app. Add
+              another lock, or swap the widget for one with a lower number. Only
+              the first eight locks have widgets.
+            </p>
+          </details>
+
+          <details id="missing">
+            <summary>Love Lock doesn't appear in the widget list.</summary>
+            <p>
+              Open the Love Lock app once after installing it, then try adding
+              the widget again. If it's still missing, restart your iPhone. iOS
+              sometimes needs a restart to refresh its list of widgets after an
+              app is installed or updated.
+            </p>
+          </details>
+
+          <details id="rotate">
+            <summary>How do Rotate and Next up work?</summary>
+            <p>
+              When a lock has more than one countdown,
+              <strong>Rotate</strong> shows them in turn, in the order you set,
+              every 15 minutes, hour, 6 hours, or day.
+              <strong>Next up</strong> always shows whichever countdown is
+              closest, which suits holidays or upcoming days off. The
+              <strong>US Holidays</strong> preset group uses Next up.
+            </p>
+          </details>
+
+          <details id="travel">
+            <summary>What happens when I travel to another time zone?</summary>
+            <p>
+              By default, countdowns follow you: a date ends at midnight
+              wherever you are. To count to an exact moment in one place, such
+              as a birth time, open the countdown, and turn on
+              <strong>Pin to a time zone</strong>. Pinned countdowns don't move
+              when you travel.
+            </p>
+          </details>
+
+          <details id="today">
+            <summary>Why does my countdown still say "today"?</summary>
+            <p>
+              Some days last longer than one day. Hanukkah and Passover show
+              "today" for 8 days, and Rosh Hashanah for 2. Any countdown can set
+              how many days it lasts under <strong>Lasts</strong>, so a
+              week-long vacation shows "today" until it's over and then counts
+              up. Jewish holidays count to their first full day; they begin at
+              sundown the evening before.
+            </p>
+          </details>
+
+          <details id="delete">
+            <summary>How do I delete a lock or a countdown?</summary>
+            <p>
+              Swipe it to the left and tap <strong>Delete</strong>. A lock
+              always keeps at least one countdown. Deleting a lock moves every
+              lock after it up one widget number.
+            </p>
+          </details>
+        </div>
+
+        <h2 id="parents">For parents</h2>
+        <p>
+          Love Lock is rated <strong>4+</strong> on the App Store. It's a
+          private countdown app, with nothing in it that connects a child to
+          other people or to the internet.
+        </p>
+        <ul>
+          <li>
+            <strong>No accounts, chat, or sharing.</strong> Nothing typed into
+            Love Lock is seen by anyone else.
+          </li>
+          <li><strong>No ads and no in-app purchases.</strong></li>
+          <li>
+            <strong>No web browsing.</strong> The app has no links out to
+            websites and doesn't connect to the internet.
+          </li>
+          <li>
+            <strong>Everything stays on the device.</strong> Love Lock collects
+            no data. See the
+            <a href="/love-lock/privacy.html">privacy policy</a>.
+          </li>
+        </ul>
+        <p>
+          The only content is what someone types in: names, dates and emoji for
+          their countdowns. These appear in widgets on the Lock Screen and Home
+          Screen, where anyone holding the phone can see them.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          Found a bug, or have a question or idea? Open an issue on GitHub (a
+          free GitHub account is required). Issues are public, so please don't
+          include your own names or dates.
+        </p>
+        <p>
+          <a
+            class="contact"
+            href="https://github.com/ai1place/ai1place.github.io/issues/new?template=love-lock.yml"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"
+              />
+            </svg>
+            Open an issue on GitHub
+          </a>
+        </p>
+        <p class="note">
+          Include your iPhone model and iOS version (Settings → General → About)
+          and what you expected to happen.
+        </p>
+      </main>
+
+      <footer>
+        <p>
+          <a href="/love-lock/">Love Lock</a> ·
+          <a href="/love-lock/support.html#parents">For parents</a> ·
+          <a href="/love-lock/privacy.html">Privacy policy</a>
+        </p>
+        <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
 </html>
