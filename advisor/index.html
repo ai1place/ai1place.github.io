@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor: Every AI coding session, at a glance</title>
+  <meta name="description" content="Advisor is a menu-bar app for macOS that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
+  <meta property="og:site_name" content="Advisor">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai1.place/advisor/">
+  <meta property="og:title" content="Every AI coding session, at a glance">
+  <meta property="og:description" content="Advisor is a menu-bar app for macOS that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
+  <meta property="og:image" content="https://ai1.place/advisor/images/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Advisor app icon">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/advisor/images/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/advisor/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/advisor/style.css">
+</head>
+<body>
+  <div class="leds" aria-hidden="true">
+    <span style="background:#0000FF"></span>
+    <span style="background:#8000FF"></span>
+    <span style="background:#00FF00"></span>
+    <span style="background:#FF7F00"></span>
+    <span style="background:#FFAA00"></span>
+    <span style="background:#FF0000"></span>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/advisor/">
+        <img src="/advisor/images/app-icon.svg" width="36" height="36" alt="">
+        Advisor
+      </a>
+      <nav aria-label="Advisor">
+        <a href="#features">Features</a>
+        <a href="#get-started">Get started</a>
+        <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <img class="hero-icon" src="/advisor/images/app-icon.svg" width="96" height="96" alt="">
+          <p class="eyebrow">Menu-bar app for macOS</p>
+          <h1>Every AI coding session, at a glance.</h1>
+          <p class="lede">Advisor follows your Claude Code, Codex, Copilot, Cursor, and Grok Build sessions and shows what each one is doing. When any of them needs you, the robot in your menu bar says how many, and one click brings that window forward.</p>
+
+          <ul class="hero-states" aria-label="Session states">
+            <li><span class="face"><img src="/advisor/images/mood-working.svg" alt=""></span><span class="state-name"><i class="dot" style="--led:#0000FF"></i>Thinking</span></li>
+            <li><span class="face"><img src="/advisor/images/mood-tool.svg" alt=""></span><span class="state-name"><i class="dot" style="--led:#8000FF"></i>Tool running</span></li>
+            <li><span class="face"><img src="/advisor/images/mood-done.svg" alt=""></span><span class="state-name"><i class="dot" style="--led:#00FF00"></i>Complete</span></li>
+            <li><span class="face"><img src="/advisor/images/mood-question.svg" alt=""></span><span class="state-name"><i class="dot blinking" style="--led:#FF7F00"></i>Needs input</span></li>
+            <li><span class="face"><img src="/advisor/images/mood-waiting.svg" alt=""></span><span class="state-name"><i class="dot" style="--led:#FFAA00"></i>Waiting</span></li>
+          </ul>
+
+          <div class="download">
+            <a class="download-button" id="download" href="https://github.com/ai1place/ai1place.github.io/releases">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 1.5v8.2M4.6 7.2 8 10.6l3.4-3.4M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Download for Mac
+            </a>
+            <p class="download-meta" id="download-meta">Latest build on GitHub Releases.</p>
+            <p class="download-file" id="download-file"></p>
+            <p class="download-links">
+              <a id="checksum" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>SHA-256</a>
+              <a id="notes" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Release notes</a>
+              <a id="intel" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Intel Mac</a>
+              <a id="windows" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Windows</a>
+            </p>
+            <code class="digest" id="digest" hidden></code>
+            <p class="note">Signed with a Developer ID and notarized by Apple. The disk image opens after the usual download prompt.</p>
+            <p class="note sr-only" id="download-status" role="status">Loading the latest macOS release.</p>
+            <noscript>
+              <p class="note">JavaScript fills in the latest disk image from this site's GitHub Releases. The button above opens that page directly.</p>
+            </noscript>
+          </div>
+        </div>
+
+        <figure class="window-shot">
+          <img src="/advisor/images/window.webp" width="532" height="942"
+            alt="The Advisor window listing eight sessions grouped by agent. Claude Code: storefront needs input, waiting for your answer; api-gateway is running cargo test; design-system is thinking. Codex: billing needs input and mobile-app is complete. Copilot: docs-site is editing getting-started.md. Cursor: infra is complete. Grok Build: data-pipeline is waiting.">
+        </figure>
+      </div>
+
+      <section id="menu-bar" aria-labelledby="menu-bar-title">
+        <div class="split">
+          <div>
+            <h2 id="menu-bar-title">Right in your menu bar</h2>
+            <p class="section-lede">The robot takes the color of whatever is most urgent across your sessions. When some are waiting on you, it shows how many in its visor and blinks while they wait.</p>
+            <ul class="points">
+              <li><strong>Every session, one click away.</strong> Open the menu to see them all, each with its state's color, then pick one to bring its window forward.</li>
+              <li><strong>Or skip the click.</strong> <kbd>⌃⌥0</kbd> opens the menu from any app, and <kbd>⌃⌥1</kbd> through <kbd>⌃⌥9</kbd> bring a session's window forward. The menu shows which number is which.</li>
+              <li><strong>Quiet when nothing is.</strong> With no sessions running, the robot dozes off.</li>
+            </ul>
+          </div>
+
+          <figure class="menu-shot">
+            <div class="menubar" aria-hidden="true">
+              <span class="menubar-item"><img src="/advisor/images/tray-attention.png" width="22" height="22" alt=""></span>
+            </div>
+            <img class="menu" src="/advisor/images/menu.webp" width="356" height="342"
+              alt="Advisor's menu, under a robot showing 2 in its visor. It lists the eight sessions, each with a colored dot for its state and its keyboard shortcut, from Control-Option-1 to Control-Option-8.">
+          </figure>
+        </div>
+
+        <ul class="moods">
+          <li>
+            <span class="menubar mini" aria-hidden="true"><img src="/advisor/images/tray-quiet.png" width="22" height="22" alt=""></span>
+            <strong>Quiet</strong>No sessions running.
+          </li>
+          <li>
+            <span class="menubar mini" aria-hidden="true"><img src="/advisor/images/tray-working.png" width="22" height="22" alt=""></span>
+            <strong>Thinking</strong>An agent is working on your prompt.
+          </li>
+          <li>
+            <span class="menubar mini" aria-hidden="true"><img src="/advisor/images/tray-tool.png" width="22" height="22" alt=""></span>
+            <strong>Tool running</strong>A command, edit, or search is underway.
+          </li>
+          <li>
+            <span class="menubar mini" aria-hidden="true"><img class="blinking" src="/advisor/images/tray-attention.png" width="22" height="22" alt=""></span>
+            <strong>Needs input</strong>Two sessions are waiting on you.
+          </li>
+        </ul>
+      </section>
+
+      <section id="states" aria-labelledby="states-title">
+        <h2 id="states-title">One color per state</h2>
+        <p class="section-lede">Each state has one color in the window, the menu, and the menu bar. Needs input and a stalled tool blink, so they stand out from the solid color next to them.</p>
+        <ul class="states">
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-idle.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#828282"></i>Idle</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-working.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#0000FF"></i>Thinking</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-tool.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#8000FF"></i>Tool running</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-tool.svg" alt=""></span>
+            <span class="state-name"><i class="dot blinking" style="--led:#8000FF"></i>Tool stalled</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-done.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#00FF00"></i>Complete</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-question.svg" alt=""></span>
+            <span class="state-name"><i class="dot blinking" style="--led:#FF7F00"></i>Needs input</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-waiting.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#FFAA00"></i>Waiting</span>
+          </li>
+          <li class="state">
+            <span class="face"><img src="/advisor/images/mood-error.svg" alt=""></span>
+            <span class="state-name"><i class="dot" style="--led:#FF0000"></i>Error</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="features" aria-labelledby="features-title">
+        <h2 id="features-title">In the app</h2>
+        <p class="section-lede">Open Advisor for the full picture: every session, what it was asked, and what it's doing right now.</p>
+        <div class="facts">
+          <article>
+            <span class="face"><img src="/advisor/images/mood-working.svg" alt=""></span>
+            <h3>Grouped by agent</h3>
+            <p>Sessions sit together by agent, each numbered, with its state and how long it has been in it.</p>
+          </article>
+          <article>
+            <span class="face"><img src="/advisor/images/mood-done.svg" alt=""></span>
+            <h3>The prompt at a glance</h3>
+            <p>Each session shows the first line of its latest prompt. Turn on local AI summaries for a one-line title, written on your Mac.</p>
+          </article>
+          <article>
+            <span class="face"><img src="/advisor/images/mood-tool.svg" alt=""></span>
+            <h3>Live tool activity</h3>
+            <p>See which tool is running and for how long, like "Running Bash: cargo test". A call that goes quiet is flagged "no response yet".</p>
+          </article>
+          <article>
+            <span class="face"><img src="/advisor/images/mood-question.svg" alt=""></span>
+            <h3>Click to focus</h3>
+            <p>Click a session to bring its window forward, whether it's in Terminal, iTerm2, tmux, VS Code, IntelliJ, or Zed.</p>
+          </article>
+          <article>
+            <span class="face"><img src="/advisor/images/mood-waiting.svg" alt=""></span>
+            <h3>Your order</h3>
+            <p>Click a session's number to move it. It swaps places with whichever session had that number.</p>
+          </article>
+          <article>
+            <span class="face"><img src="/advisor/images/mood-idle.svg" alt=""></span>
+            <h3>Nothing to set up per session</h3>
+            <p>New sessions appear on their own as soon as an agent starts, and finished ones leave when they end.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="get-started" aria-labelledby="get-started-title">
+        <h2 id="get-started-title">Get started</h2>
+        <ol class="steps">
+          <li>Open the disk image and drag Advisor to Applications.</li>
+          <li>Open Advisor. Grant Accessibility and Automation when macOS asks. Bringing the right window forward needs them.</li>
+          <li>Open the Agents view. It lists each coding agent it finds and shows the exact hook change. Nothing is written until you apply it.</li>
+        </ol>
+
+        <h3 class="agents-title">Agents that report in</h3>
+        <ul class="agents">
+          <li>Claude Code</li>
+          <li>Codex</li>
+          <li>Copilot CLI</li>
+          <li>Cursor</li>
+          <li>Grok Build</li>
+        </ul>
+      </section>
+
+      <aside class="keyboard" aria-labelledby="keyboard-title">
+        <div class="keys" aria-hidden="true">
+          <div class="cap" style="--led:#0000FF"><img src="/advisor/images/mood-working.svg" alt=""><i class="led"></i></div>
+          <div class="cap" style="--led:#FF7F00"><img src="/advisor/images/mood-question.svg" alt=""><i class="led blinking"></i></div>
+          <div class="cap" style="--led:#00FF00"><img src="/advisor/images/mood-done.svg" alt=""><i class="led"></i></div>
+        </div>
+        <div>
+          <h2 id="keyboard-title">Have a QMK keyboard?</h2>
+          <p>Advisor can also light one key per session, in the same colors, and pressing that key brings its window forward. It takes custom QMK firmware, with keymaps ready for the <a href="https://nuphy.com/products/air75-v2">NuPhy Air75 V2</a> and the <a href="https://www.keychron.com/products/keychron-k0-max-qmk-wireless-custom-number-pad">Keychron K0 Max</a>, and a USB-C cable that carries data. None of it is needed for anything above.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p><a href="/">ai1.place</a> · <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a></p>
+      <p>The screenshots show made-up sessions. The download is a Release on this site's GitHub repository.</p>
+      <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/advisor/download.js"></script>
+</body>
+</html>
