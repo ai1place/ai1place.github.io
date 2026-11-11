@@ -141,7 +141,8 @@ h1 {
   font-size: 18px;
 }
 
-.availability {
+.availability,
+.availability:visited {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -152,6 +153,11 @@ h1 {
   color: var(--text);
   font-size: 15px;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.availability:hover {
+  filter: brightness(0.95);
 }
 
 .availability svg {

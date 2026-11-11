@@ -47,6 +47,8 @@ cwebp -q 88 -alpha_q 100 .screenshots/02-menu.png -o advisor/images/menu.webp
 | `love-lock/privacy.html` | https://ai1.place/love-lock/privacy.html | App Store Connect Privacy Policy URL |
 | `love-lock/support.html` | https://ai1.place/love-lock/support.html | App Store Connect Support URL |
 
+The app is on the App Store at https://apps.apple.com/us/app/love-lock-countdowns/id6832439251. The Love Lock pages link to it, and set `apple-itunes-app` so Safari on iPhone shows the Smart App Banner.
+
 Support requests are issues on this repository, filed with the `.github/ISSUE_TEMPLATE/love-lock.yml` form, which applies the `love-lock` label. The screenshots show made-up sample locks. They come from `scripts/screenshots.sh` in the Love Lock repository.
 
 ## Copyright
