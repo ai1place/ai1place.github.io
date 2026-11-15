@@ -255,7 +255,7 @@ h2 {
 }
 
 .preview .window,
-.preview .phone {
+.preview .devices {
   flex: none;
 }
 
@@ -279,6 +279,46 @@ h2 {
 
 .preview .phone img {
   border-radius: 28px;
+}
+
+/* Love Lock's Apple Watch, overlapping the phone's right edge beside the clock. The pair stays
+   centered, so it fits the narrowest card. */
+.preview .devices {
+  display: flex;
+  align-items: flex-start;
+}
+
+.preview .devices > * {
+  flex: none;
+}
+
+.preview .watch {
+  position: relative;
+  display: block;
+  width: 116px;
+  margin: 112px 0 0 -30px;
+  padding: 7px;
+  border-radius: 34px / 30px;
+  background: #0b0b0c;
+  box-shadow:
+    inset 0 0 0 2px #8e8e93,
+    0 14px 30px var(--shadow);
+}
+
+/* The Digital Crown. */
+.preview .watch::after {
+  content: "";
+  position: absolute;
+  top: 28%;
+  right: -4px;
+  width: 4px;
+  height: 22%;
+  border-radius: 0 3px 3px 0;
+  background: #8e8e93;
+}
+
+.preview .watch img {
+  border-radius: 26px / 22px;
 }
 
 .actions {

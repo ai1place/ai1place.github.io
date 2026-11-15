@@ -6,7 +6,7 @@ The site served at [ai1.place](https://ai1.place/). It has three parts, each wit
 | --- | --- | --- |
 | `/` (`index.html`, `style.css`) | https://ai1.place/ | Homepage, sending visitors to both apps |
 | `advisor/` | https://ai1.place/advisor/ | Advisor for macOS: features, screenshots, and the download |
-| `love-lock/` | https://ai1.place/love-lock/ | Love Lock for iPhone: features, support, and privacy |
+| `love-lock/` | https://ai1.place/love-lock/ | Love Lock for iPhone and Apple Watch: features, support, and privacy |
 
 The homepage shows each app's screenshot from that app's own `images/` folder.
 
@@ -39,7 +39,7 @@ cwebp -q 88 -alpha_q 100 .screenshots/02-menu.png -o advisor/images/menu.webp
 
 ## Love Lock
 
-`love-lock/` holds the pages for the Love Lock iPhone app. It has its own `style.css` and `images/`, so it doesn't depend on the Advisor assets.
+`love-lock/` holds the pages for the Love Lock iPhone app and its Apple Watch app. It has its own `style.css` and `images/`, so it doesn't depend on the Advisor assets.
 
 | Page | URL | Used for |
 | --- | --- | --- |
@@ -50,6 +50,8 @@ cwebp -q 88 -alpha_q 100 .screenshots/02-menu.png -o advisor/images/menu.webp
 The app is on the App Store at https://apps.apple.com/us/app/love-lock-countdowns/id6832439251. The Love Lock pages link to it, and set `apple-itunes-app` so Safari on iPhone shows the Smart App Banner.
 
 Support requests are issues on this repository, filed with the `.github/ISSUE_TEMPLATE/love-lock.yml` form, which applies the `love-lock` label. The screenshots show made-up sample locks. They come from `scripts/screenshots.sh` in the Love Lock repository.
+
+The Apple Watch shots (`watch-*.jpg`, 422 × 514) come from that script's `capture watch`, converted with `sips -s format jpeg -s formatOptions 88`. The homepage and the Love Lock hero pair `lock-screen.jpg` with `watch-face.jpg`, the Modular Ultra face at 9:41 to match the phone, and `watch-wayfinder.jpg` shows its hands at 10:09. watchOS simulators can't override the time, so those two were taken by shifting the watch simulator's clock zone: `xcrun simctl spawn <watch> launchctl setenv TZ Etc/GMT-10`, restarting Carousel (`launchctl kill SIGTERM system/com.apple.Carousel`), and taking `xcrun simctl io <watch> screenshot` during the real minute that reads 9:41 (or 10:09) there. The countdowns don't move, because the widget extension doesn't see `TZ`. Afterwards, `launchctl unsetenv TZ`.
 
 ## Copyright
 
