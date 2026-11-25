@@ -65,8 +65,10 @@ a:visited {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 10px 24px;
   padding: 22px 0 8px;
 }
 
@@ -94,6 +96,7 @@ header nav {
 
 header nav a,
 header nav a:visited {
+  white-space: nowrap;
   color: var(--muted);
   text-decoration: none;
   font-size: 15px;
@@ -641,6 +644,113 @@ h3.agents-title {
   left: 10px;
   right: 10px;
   bottom: 4px;
+}
+
+/* Text pages (support, privacy). */
+
+.page {
+  max-width: 44rem;
+  padding: 28px 0 56px;
+}
+
+.page h1 {
+  max-width: none;
+  font-size: clamp(32px, 4.5vw, 44px);
+}
+
+.page .updated {
+  margin: 10px 0 28px;
+  color: var(--faint);
+  font-size: 14px;
+}
+
+.page h2 {
+  margin-top: 36px;
+  font-size: 22px;
+}
+
+.page p,
+.page li {
+  color: var(--muted);
+}
+
+.page strong {
+  color: var(--text);
+}
+
+.page ul {
+  padding-left: 1.2em;
+}
+
+.page li {
+  margin: 6px 0;
+}
+
+.page code {
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.summary {
+  margin: 0 0 20px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.summary p {
+  margin: 0;
+  color: var(--text);
+}
+
+.faq details {
+  border-top: 1px solid var(--line);
+}
+
+.faq details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  padding: 14px 0;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.faq details p,
+.faq details ol {
+  margin: 0 0 16px;
+}
+
+.page ol {
+  padding-left: 1.4em;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact:visited {
+  color: #fff;
+}
+
+.contact:hover {
+  background: #0070e0;
+}
+
+.contact svg {
+  width: 18px;
+  height: 18px;
 }
 
 footer {

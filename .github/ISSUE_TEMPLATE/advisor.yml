@@ -1,0 +1,50 @@
+name: Advisor
+description: A bug, question or idea for the Advisor app on macOS or Windows.
+title: "[Advisor] "
+labels: ["advisor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for writing in. Issues are public, so please leave out prompts, file paths, and anything else private.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this about?
+      options:
+        - Something isn't working
+        - A question
+        - An idea
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead? Screenshots help.
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Which agent?
+      multiple: true
+      options:
+        - Claude Code
+        - Codex
+        - Copilot CLI
+        - Cursor
+        - Grok Build
+        - Not about an agent
+  - type: input
+    id: system
+    attributes:
+      label: Computer and OS version
+      description: On a Mac, Apple menu → About This Mac. On Windows, Settings → System → About.
+      placeholder: MacBook Pro M4, macOS 27.1 / Windows 11 25H2
+  - type: input
+    id: version
+    attributes:
+      label: Advisor version
+      description: Shown in Advisor's menu, under Open Advisor.
+      placeholder: "0.5.0"

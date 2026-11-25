@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Support</title>
+  <meta name="description" content="Help with setting up Advisor's agent hooks, bringing session windows forward, and how to report a problem.">
+  <meta property="og:site_name" content="Advisor">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai1.place/advisor/support.html">
+  <meta property="og:title" content="Support">
+  <meta property="og:description" content="Help with setting up Advisor's agent hooks, bringing session windows forward, and how to report a problem.">
+  <meta property="og:image" content="https://ai1.place/advisor/images/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Advisor app icon">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/advisor/images/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/advisor/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/advisor/style.css">
+</head>
+<body>
+  <div class="leds" aria-hidden="true">
+    <span style="background:#0000FF"></span>
+    <span style="background:#8000FF"></span>
+    <span style="background:#00FF00"></span>
+    <span style="background:#FF7F00"></span>
+    <span style="background:#FFAA00"></span>
+    <span style="background:#FF0000"></span>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/advisor/">
+        <img src="/advisor/images/app-icon.svg" width="36" height="36" alt="">
+        Advisor
+      </a>
+      <nav aria-label="Advisor">
+        <a href="/advisor/#features">Features</a>
+        <a href="/advisor/support.html" aria-current="page">Support</a>
+        <a href="/advisor/privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <h1>Support</h1>
+      <p class="updated">Answers to common questions, and how to reach us.</p>
+
+      <h2>Questions</h2>
+      <div class="faq">
+        <details id="setup" open>
+          <summary>How do I connect my coding agents?</summary>
+          <ol>
+            <li>Open Advisor from its icon in the menu bar (macOS) or the system tray (Windows), and choose <strong>Open Advisor</strong>.</li>
+            <li>Go to the <strong>Agents</strong> tab. It lists each supported agent it finds on your computer: Claude Code, Codex, Copilot CLI, Cursor, and Grok Build.</li>
+            <li>Read the change it shows for each agent, and click <strong>Install hooks</strong> to apply it.</li>
+          </ol>
+          <p>Nothing is written until you click. Advisor backs up each file first, next to the original, and only touches its own entries. Your other hooks and settings stay as they were. Start a new session afterwards, and it appears in Advisor.</p>
+        </details>
+
+        <details id="no-sessions">
+          <summary>My sessions don't show up.</summary>
+          <p>Check the <strong>Agents</strong> tab first. An agent marked <strong>Out of date</strong> or not set up needs <strong>Install hooks</strong> again. Then start a new session, or send a prompt in an existing one. Sessions that were already running when Advisor started appear on their next prompt or tool call. Claude Code, Copilot CLI, and Grok Build sessions usually appear right away.</p>
+          <p>Advisor must be running for sessions to report in. Only one copy runs at a time.</p>
+        </details>
+
+        <details id="stale">
+          <summary>A session stays listed after I closed it.</summary>
+          <p>Agents don't always say goodbye. Closing a terminal window or a crash can end a session without telling Advisor. Advisor clears these on its own for Claude Code and Grok Build. For the others, click the <strong>×</strong> on its card in the window.</p>
+        </details>
+
+        <details id="focus-mac">
+          <summary>Clicking a session doesn't bring its window forward on my Mac.</summary>
+          <p>Advisor needs your permission to switch windows. Open <strong>System Settings → Privacy &amp; Security</strong> and turn Advisor on under <strong>Accessibility</strong>, and under <strong>Automation</strong> for your terminal or editor. macOS asks the first time Advisor tries each app.</p>
+          <p>If Advisor already looks allowed under Accessibility but still can't switch windows, the entry may be from an older copy. Select it, remove it with the <strong>−</strong> button, then quit and reopen Advisor and allow it again.</p>
+        </details>
+
+        <details id="focus-windows">
+          <summary>Which windows can Advisor bring forward on Windows?</summary>
+          <p>Advisor brings forward the window a session runs in, and in Windows Terminal it also selects the session's tab. No permission is needed. If two sessions run in the same window of an editor, such as VS Code, both bring that window forward.</p>
+        </details>
+
+        <details id="shortcuts">
+          <summary>What are the keyboard shortcuts?</summary>
+          <p>Sessions 1 to 9 each have a shortcut that brings their window forward from any app: <kbd>⌃⌥1</kbd> to <kbd>⌃⌥9</kbd> on a Mac, and <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>9</kbd> on Windows. The same keys with <kbd>0</kbd> open Advisor's menu, which shows each session's number. If another app already uses one of these, Advisor skips it. Turn them all off with <strong>Global shortcuts</strong> at the bottom of the window.</p>
+        </details>
+
+        <details id="numbers">
+          <summary>How do I change a session's number?</summary>
+          <p>Click the number on its card and pick another. The session swaps places with whichever session had that number.</p>
+        </details>
+
+        <details id="summaries">
+          <summary>What are local AI summaries?</summary>
+          <p>Normally each card shows the first line of the session's latest prompt. Turn on <strong>Local AI summaries</strong> at the bottom of the window, and a model running on your computer writes a one-line title instead. On a Mac with Apple Intelligence, it can use Apple's on-device model. Otherwise, Advisor downloads a small model (about 490 MB) the first time, with progress shown beside the toggle. Your prompts never leave your computer either way.</p>
+        </details>
+
+        <details id="login">
+          <summary>Can Advisor start when I sign in to Windows?</summary>
+          <p>Yes, in the version from the Microsoft Store. Click Advisor's tray icon and check <strong>Start at Login</strong>. You can also turn it on or off in <strong>Settings → Apps → Startup</strong>, where it's listed as AI1 Advisor. If you turned it off there, the menu says so, and only Settings can turn it back on.</p>
+        </details>
+
+        <details id="tray">
+          <summary>Where is Advisor when its window is closed?</summary>
+          <p>Closing the window only hides it. Advisor keeps running in the menu bar on a Mac, or in the system tray on Windows. On Windows, the tray icon might be in the overflow area behind the <strong>^</strong> arrow. Hover over it to see how many sessions are running and how many need you. To quit, choose <strong>Quit Advisor</strong> from its menu.</p>
+        </details>
+
+        <details id="keyboard">
+          <summary>Do I need the QMK keyboard?</summary>
+          <p>No. Everything works without one. With a supported keyboard running Advisor's QMK firmware, one key per session lights in the same colors, and pressing it brings that session's window forward.</p>
+        </details>
+
+        <details id="remove">
+          <summary>How do I remove Advisor?</summary>
+          <p>In the <strong>Agents</strong> tab, click <strong>Remove hooks</strong> for each agent. Then quit Advisor and uninstall it. On a Mac, drag it to the Trash. On Windows, uninstall it from <strong>Settings → Apps</strong>. Last, delete the <code>.ai1-advisor</code> folder in your home folder, which holds Advisor's settings, log, and model. See the <a href="/advisor/privacy.html">privacy policy</a> for what's in it.</p>
+        </details>
+      </div>
+
+      <h2 id="contact">Contact</h2>
+      <p>Found a bug, or have a question or idea? Open an issue on GitHub (a free GitHub account is required). Issues are public, so please leave out prompts, file paths, and anything else private.</p>
+      <p>
+        <a class="contact" href="https://github.com/ai1place/ai1place.github.io/issues/new?template=advisor.yml">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/>
+          </svg>
+          Open an issue on GitHub
+        </a>
+      </p>
+      <p class="note">Include your Advisor version (shown in its menu, under Open Advisor), your macOS or Windows version, which agent the session was in, and what you expected to happen.</p>
+    </main>
+
+    <footer>
+      <p><a href="/">ai1.place</a> · <a href="/advisor/">Advisor</a> · <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a> · <a href="/advisor/privacy.html">Privacy policy</a></p>
+      <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

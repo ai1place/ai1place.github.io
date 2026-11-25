@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Privacy Policy</title>
+  <meta name="description" content="Advisor collects no data. What it learns about your coding sessions stays on your computer.">
+  <meta property="og:site_name" content="Advisor">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai1.place/advisor/privacy.html">
+  <meta property="og:title" content="Privacy Policy">
+  <meta property="og:description" content="Advisor collects no data. What it learns about your coding sessions stays on your computer.">
+  <meta property="og:image" content="https://ai1.place/advisor/images/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Advisor app icon">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/advisor/images/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/advisor/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/advisor/style.css">
+</head>
+<body>
+  <div class="leds" aria-hidden="true">
+    <span style="background:#0000FF"></span>
+    <span style="background:#8000FF"></span>
+    <span style="background:#00FF00"></span>
+    <span style="background:#FF7F00"></span>
+    <span style="background:#FFAA00"></span>
+    <span style="background:#FF0000"></span>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/advisor/">
+        <img src="/advisor/images/app-icon.svg" width="36" height="36" alt="">
+        Advisor
+      </a>
+      <nav aria-label="Advisor">
+        <a href="/advisor/#features">Features</a>
+        <a href="/advisor/support.html">Support</a>
+        <a href="/advisor/privacy.html" aria-current="page">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Effective November 24, 2026</p>
+
+      <div class="summary">
+        <p><strong>Advisor collects no data.</strong> What it learns about your AI coding sessions stays on your computer. It is never sent to us or to anyone else.</p>
+      </div>
+
+      <p>This policy covers Advisor for macOS and Windows, including the version in the Microsoft Store, where it is listed as AI1 Advisor.</p>
+
+      <h2>What Advisor reads</h2>
+      <p>Advisor shows what your coding agents (Claude Code, Codex, Copilot CLI, Cursor, and Grok Build) are doing. To do that, each agent's hooks pass Advisor a short message whenever something happens in a session: a prompt was sent, a tool started or finished, or the agent is waiting for you. These messages can include your prompt's text, the tool being run and its input, and the session's working folder. They travel between programs on your computer and never over the network.</p>
+      <p>Advisor also reads the session files these agents keep in your home folder, so it can list sessions that were already running when it started.</p>
+
+      <h2>What Advisor stores</h2>
+      <p>Everything Advisor saves is in one folder, <code>.ai1-advisor</code> in your home folder:</p>
+      <ul>
+        <li><strong>Settings</strong>, such as whether local summaries are on.</li>
+        <li><strong>An events log</strong> of the messages above, so problems can be diagnosed. It can contain prompt text and tool input. It is capped at 5 MB, with three older copies kept, and the oldest is deleted as new events arrive.</li>
+        <li><strong>A copy of the app itself</strong>, which your agents' hooks run.</li>
+        <li><strong>The local AI model</strong>, if you turn on local summaries on a computer that needs it.</li>
+      </ul>
+      <p>The list of sessions you see is kept in memory and goes away when Advisor quits.</p>
+
+      <h2>Your agents' settings</h2>
+      <p>When you apply a hook change in the Agents view, Advisor adds its hook to that agent's configuration file in your home folder and saves a backup of the file next to it first. It shows you the exact change before writing anything, and it writes nothing until you apply it.</p>
+
+      <h2>Local summaries</h2>
+      <p>Local summaries are off until you turn them on. When they are on, Advisor writes a one-line title for each session from its prompt, on your computer. On a Mac with Apple Intelligence, it uses Apple's on-device model. Elsewhere, it uses a small open model that runs on your computer.</p>
+      <p>That model is the one time Advisor connects to the internet. The first time you turn local summaries on, it downloads the model file (about 490 MB) from Hugging Face, and checks it against a known checksum. Hugging Face sees an ordinary download request from your computer's IP address, under <a href="https://huggingface.co/privacy">Hugging Face's privacy policy</a>. Nothing about your sessions is sent. Once the model is on your computer, summaries never leave it.</p>
+
+      <h2>Bringing windows forward</h2>
+      <p>When you pick a session, Advisor finds the terminal or editor window it's running in and brings it forward. On a Mac, this uses the Accessibility and Automation permissions you grant. On Windows, it uses Windows' accessibility interface to pick the right Windows Terminal tab. Advisor only looks for the session's window. It doesn't read what's in your other windows.</p>
+
+      <h2>QMK keyboards</h2>
+      <p>If you connect a keyboard running Advisor's QMK firmware, Advisor sends it each session's state and color over USB, and the keyboard tells Advisor which key you pressed. No prompt text goes to the keyboard.</p>
+
+      <h2>What Advisor doesn't do</h2>
+      <ul>
+        <li>No accounts or sign-in.</li>
+        <li>No network connections, other than the optional model download above.</li>
+        <li>No analytics, crash reporting SDKs, advertising, or tracking of any kind.</li>
+        <li>No update checks. New versions come from this site or the Microsoft Store.</li>
+        <li>Nothing is sold or shared, because nothing is collected.</li>
+      </ul>
+
+      <h2>Deleting your data</h2>
+      <p>Click Remove hooks for each agent in the Agents view, then quit Advisor and delete the <code>.ai1-advisor</code> folder in your home folder. That removes everything Advisor stored, including the model. Uninstalling the app doesn't remove that folder by itself.</p>
+
+      <h2>Children</h2>
+      <p>Advisor is a tool for software developers. It collects no personal information from anyone, including children.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy ever changes, the new version will be posted on this page with a new effective date. If Advisor ever began collecting data, the policy would be updated before that version of the app was released.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy? See <a href="/advisor/support.html#contact">Support</a> for how to reach us.</p>
+    </main>
+
+    <footer>
+      <p><a href="/">ai1.place</a> · <a href="/advisor/">Advisor</a> · <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a> · <a href="/advisor/support.html">Support</a></p>
+      <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

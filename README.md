@@ -5,7 +5,7 @@ The site served at [ai1.place](https://ai1.place/). It has three parts, each wit
 | Folder | URL | What it is |
 | --- | --- | --- |
 | `/` (`index.html`, `style.css`) | https://ai1.place/ | Homepage, sending visitors to both apps |
-| `advisor/` | https://ai1.place/advisor/ | Advisor for macOS: features, screenshots, and the download |
+| `advisor/` | https://ai1.place/advisor/ | Advisor for macOS and Windows: features, screenshots, the download, support, and privacy |
 | `love-lock/` | https://ai1.place/love-lock/ | Love Lock for iPhone and Apple Watch: features, support, and privacy |
 
 The homepage shows each app's screenshot from that app's own `images/` folder.
@@ -23,6 +23,13 @@ Publish these assets on a Release of **this** repository (the Advisor source rep
 | `Advisor_X.Y.Z_x64.dmg` | Optional Intel build. Shown beside the Apple silicon download. |
 
 The button uses the asset's browser download URL (`https://github.com/ai1place/ai1place.github.io/releases/download/...`).
+
+| Page | URL | Used for |
+| --- | --- | --- |
+| `advisor/support.html` | https://ai1.place/advisor/support.html | Microsoft Partner Center support contact |
+| `advisor/privacy.html` | https://ai1.place/advisor/privacy.html | Microsoft Partner Center privacy policy URL |
+
+Both cover the macOS app and the Microsoft Store app, which is listed there as AI1 Advisor. Update the privacy policy whenever the app starts storing or sending something new. Support requests are issues on this repository, filed with the `.github/ISSUE_TEMPLATE/advisor.yml` form, which applies the `advisor` label.
 
 `advisor/download.js` fills in the button, using `advisor/release.js` to pick the release.
 
