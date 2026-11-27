@@ -61,7 +61,7 @@ function applyRelease(described) {
     described.intel && described.intel.url,
     intelSize ? `Intel Mac (${intelSize})` : "Intel Mac",
   );
-  showLink(windows, described.windows && described.windows.url, "Windows");
+  showLink(windows, described.windows && described.windows.url, "Windows installer");
   if (windows && described.windows) windows.title = described.windows.name;
   const kind = described.prerelease ? "Preview" : "Release";
   setStatus(

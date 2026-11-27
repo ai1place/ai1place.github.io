@@ -173,6 +173,22 @@ h1 {
   height: 16px;
 }
 
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-button,
+.store-button:visited {
+  background: var(--badge);
+  color: var(--text);
+}
+
+.store-button:hover {
+  background: light-dark(#d6d6dc, #48484a);
+}
+
 .download-meta,
 .download-file,
 .download-links,

@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Advisor: Every AI coding session, at a glance</title>
-  <meta name="description" content="Advisor is a menu-bar app for macOS that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
+  <meta name="description" content="Advisor is an app for macOS and Windows that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
   <meta property="og:site_name" content="Advisor">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ai1.place/advisor/">
   <meta property="og:title" content="Every AI coding session, at a glance">
-  <meta property="og:description" content="Advisor is a menu-bar app for macOS that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
+  <meta property="og:description" content="Advisor is an app for macOS and Windows that shows what each Claude Code, Codex, Copilot, Cursor, and Grok Build session is doing, and which ones need you.">
   <meta property="og:image" content="https://ai1.place/advisor/images/og.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -49,9 +49,9 @@
       <div class="hero">
         <div>
           <img class="hero-icon" src="/advisor/images/app-icon.svg" width="96" height="96" alt="">
-          <p class="eyebrow">Menu-bar app for macOS</p>
+          <p class="eyebrow">For macOS and Windows</p>
           <h1>Every AI coding session, at a glance.</h1>
-          <p class="lede">Advisor follows your Claude Code, Codex, Copilot, Cursor, and Grok Build sessions and shows what each one is doing. When any of them needs you, the robot in your menu bar says how many, and one click brings that window forward.</p>
+          <p class="lede">Advisor follows your Claude Code, Codex, Copilot, Cursor, and Grok Build sessions and shows what each one is doing. When any of them needs you, the robot in your menu bar or system tray says how many, and one click brings that window forward.</p>
 
           <ul class="hero-states" aria-label="Session states">
             <li><span class="face"><img src="/advisor/images/mood-working.svg" alt=""></span><span class="state-name"><i class="dot" style="--led:#0000FF"></i>Thinking</span></li>
@@ -62,22 +62,30 @@
           </ul>
 
           <div class="download">
-            <a class="download-button" id="download" href="https://github.com/ai1place/ai1place.github.io/releases">
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M8 1.5v8.2M4.6 7.2 8 10.6l3.4-3.4M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Download for Mac
-            </a>
+            <div class="download-buttons">
+              <a class="download-button" id="download" href="https://github.com/ai1place/ai1place.github.io/releases">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M8 1.5v8.2M4.6 7.2 8 10.6l3.4-3.4M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download for Mac
+              </a>
+              <a class="download-button store-button" href="https://apps.microsoft.com/detail/9nsvgv1rtxbn?hl=en-US&amp;gl=US">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M1.5 1.5h6v6h-6zM8.5 1.5h6v6h-6zM1.5 8.5h6v6h-6zM8.5 8.5h6v6h-6z" fill="currentColor"/>
+                </svg>
+                Get it from Microsoft Store
+              </a>
+            </div>
             <p class="download-meta" id="download-meta">Latest build on GitHub Releases.</p>
             <p class="download-file" id="download-file"></p>
             <p class="download-links">
               <a id="checksum" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>SHA-256</a>
               <a id="notes" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Release notes</a>
               <a id="intel" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Intel Mac</a>
-              <a id="windows" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Windows</a>
+              <a id="windows" href="https://github.com/ai1place/ai1place.github.io/releases" hidden>Windows installer</a>
             </p>
             <code class="digest" id="digest" hidden></code>
-            <p class="note">Signed with a Developer ID and notarized by Apple. The disk image opens after the usual download prompt.</p>
+            <p class="note">On a Mac, the download is signed with a Developer ID and notarized by Apple, and opens after the usual download prompt. On Windows, the Microsoft Store installs and updates it as AI1 Advisor.</p>
             <p class="note sr-only" id="download-status" role="status">Loading the latest macOS release.</p>
             <noscript>
               <p class="note">JavaScript fills in the latest disk image from this site's GitHub Releases. The button above opens that page directly.</p>
@@ -211,8 +219,8 @@
       <section id="get-started" aria-labelledby="get-started-title">
         <h2 id="get-started-title">Get started</h2>
         <ol class="steps">
-          <li>Open the disk image and drag Advisor to Applications.</li>
-          <li>Open Advisor. Grant Accessibility and Automation when macOS asks. Bringing the right window forward needs them.</li>
+          <li>On a Mac, open the disk image and drag Advisor to Applications. On Windows, install AI1 Advisor from the <a href="https://apps.microsoft.com/detail/9nsvgv1rtxbn?hl=en-US&amp;gl=US">Microsoft Store</a>.</li>
+          <li>Open Advisor. On a Mac, grant Accessibility and Automation when macOS asks. Bringing the right window forward needs them.</li>
           <li>Open the Agents view. It lists each coding agent it finds and shows the exact hook change. Nothing is written until you apply it.</li>
         </ol>
 
@@ -240,8 +248,8 @@
     </main>
 
     <footer>
-      <p><a href="/">ai1.place</a> · <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a> · <a href="/advisor/support.html">Support</a> · <a href="/advisor/privacy.html">Privacy</a></p>
-      <p>The screenshots show made-up sessions. The download is a Release on this site's GitHub repository.</p>
+      <p><a href="/">ai1.place</a> · <a href="https://github.com/ai1place/ai1place.github.io/releases">Releases</a> · <a href="https://apps.microsoft.com/detail/9nsvgv1rtxbn?hl=en-US&amp;gl=US">Microsoft Store</a> · <a href="/advisor/support.html">Support</a> · <a href="/advisor/privacy.html">Privacy</a></p>
+      <p>The screenshots show made-up sessions. The Mac download is a Release on this site's GitHub repository.</p>
       <p>Copyright © 2026 Chris Earle. All rights reserved.</p>
     </footer>
   </div>

@@ -33,6 +33,8 @@ Both cover the macOS app and the Microsoft Store app, which is listed there as A
 
 `advisor/download.js` fills in the button, using `advisor/release.js` to pick the release.
 
+The Windows app is on the Microsoft Store at https://apps.microsoft.com/detail/9nsvgv1rtxbn?hl=en-US&gl=US, listed as AI1 Advisor. The Advisor page and the homepage link to it beside the Mac download.
+
 In `advisor/images/`, `robot.svg` is the app's robot, including the CSS classes that color its face. `app-icon.svg` is the macOS icon tile, and `og.png` is that tile at 1200×1200 for link previews. The `mood-*.svg` faces are the robot in the app's on-screen state colors.
 
 The screenshots show made-up sessions. They come from `app/scripts/screenshots.sh` in the Advisor repository, which runs a throwaway copy of the app. Convert them for the page with:
